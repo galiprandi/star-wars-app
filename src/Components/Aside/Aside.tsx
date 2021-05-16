@@ -15,7 +15,7 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
   const cid = character?.id
   const history = useHistory()
 
-  const handleClickMoreDetails = () => history.push('/' + cid)
+  const handleClickMoreDetails = () => history.push('/character/' + cid)
 
   return (
     <aside className={`aside ${!!character && 'active'}`}>
