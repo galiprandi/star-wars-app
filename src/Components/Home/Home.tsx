@@ -78,11 +78,11 @@ export const Home: React.FC = () => {
       </div>
       <footer>
         <a
-          href="//github.com/galiprandi"
+          href="https://github.com/galiprandi/star-wars-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          View on Github
+          See on Github
         </a>
       </footer>
       <Aside character={character} setCharacter={setCharacter} />
