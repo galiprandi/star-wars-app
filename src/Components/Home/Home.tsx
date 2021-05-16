@@ -82,7 +82,7 @@ export const Home: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          See on Github
+          Github
         </a>
       </footer>
       <Aside character={character} setCharacter={setCharacter} />
