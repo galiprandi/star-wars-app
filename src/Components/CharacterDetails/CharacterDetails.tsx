@@ -11,11 +11,12 @@ import { useCharacterDetails } from '../../Hooks/useCharacterDetails'
 import { Loading } from '../Loading/Loading'
 
 export const CharacterDetails: React.FC = () => {
-  const { id } = useParams<{ id: string }>()
-  console.log(id)
-
   const history = useHistory()
-  const { status, details } = useCharacterDetails(id)
+  // const { id } = useParams<{ id: string }>()
+  const urlParams = window.location.href.split('/')
+  const id = urlParams[urlParams.length - 1]
+  console.log(id)
+  const { status, details } = useCharacterDetails(id.toString())
 
   return (
     <main className="character-details">
