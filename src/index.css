@@ -1,0 +1,50 @@
+:root {
+  --primary-color: rgb(80, 77, 135);
+  --primary-gradient: linear-gradient(
+    90deg,
+    rgba(80, 77, 135, 1) 0%,
+    rgba(58, 32, 89, 1) 100%
+  );
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  position: relative;
+  font-family: system-ui;
+  margin: 0;
+  background-image: url('./stormtrooper_bg.jpg');
+  background-size: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 800px;
+  margin: auto;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+  cursor: pointer;
+  border: 0;
+  background-color: var(--primary-color);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+a,
+a:visited,
+a:link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

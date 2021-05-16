@@ -1,0 +1,55 @@
+.home {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .logo {
+  max-width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1em;
+}
+
+.home .container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  text-align: center;
+  width: 90%;
+}
+
+.home .container > * + * {
+  margin-top: 1em;
+}
+
+.home .container .character {
+  cursor: pointer;
+}
+
+.home .container .character:hover {
+  color: var(--primary-color);
+}
+
+.home .container .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.home .container span.page-number {
+  width: auto;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.home footer {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}

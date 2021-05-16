@@ -1,0 +1,66 @@
+.aside {
+  background-color: rgba(34, 34, 34, 0.4);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: all 0.4s ease-in-out;
+
+  --clip: polygon(
+    110px 0,
+    100% 0,
+    100% 100%,
+    177px 100%,
+    162px 77.6%,
+    170px 75.97%,
+    158px 74.75%,
+    128px 23.92%,
+    140px 22.47%,
+    126px 20.78%
+  );
+  --shadow: 2px 0 2px 10px rgba(34, 34, 34, 0.4);
+}
+aside.active {
+  transform: translateX(0);
+}
+
+.aside .container-wrap {
+  height: 100vh;
+  -webkit-filter: drop-shadow(-4px 0 5px rgba(50, 50, 0, 0.8));
+  filter: drop-shadow(-4px 0 5px rgba(50, 50, 0, 0.8));
+}
+
+.aside .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 360px;
+  margin-left: auto;
+  padding: 1em;
+  padding-bottom: 5em;
+  text-align: right;
+  text-transform: capitalize;
+  color: white;
+
+  background: var(--primary-color);
+  background: var(--primary-gradient);
+  -webkit-clip-path: var(--clip);
+  clip-path: var(--clip);
+  box-shadow: var(--shadow);
+}
+
+.aside .container .btn {
+  cursor: pointer;
+}
+.aside .container .btn:hover {
+  color: aqua;
+}
+.aside .container section > p {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+}

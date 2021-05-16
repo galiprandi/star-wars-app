@@ -1,0 +1,23 @@
+.character-details {
+  min-height: 100vh;
+}
+
+.character-details .container {
+  font-size: 1.3em;
+  height: 100vh;
+  background: rgb(255 255 255 / 80%);
+  padding: 1em 2em;
+}
+
+.character-details .container ul {
+  padding: 0;
+  list-style: inside;
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+.character-details .container button {
+  position: absolute;
+  bottom: 5em;
+  font-size: 14px;
+}
