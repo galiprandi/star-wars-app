@@ -12,6 +12,8 @@ import { Loading } from '../Loading/Loading'
 
 export const CharacterDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>()
+  console.log(id)
+
   const history = useHistory()
   const { status, details } = useCharacterDetails(id)
 
