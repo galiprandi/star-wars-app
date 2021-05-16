@@ -14,7 +14,7 @@ export const usePeople = () => {
     getData()
   }, [])
 
-  const getData = async (url = '//swapi.dev/api/people/') => {
+  const getData = async (url = 'https://swapi.dev/api/people/') => {
     try {
       setStatus('getting')
       const response = await axios.get(url)
