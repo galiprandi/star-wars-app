@@ -2,7 +2,7 @@
   "name": "star-wars-app",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://galiprandi.github.io/star-wars-app",
+  "homepage": "https://galiprandi.github.io/star-wars-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
@@ -12,6 +12,7 @@
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.5",
     "axios": "^0.21.1",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
@@ -23,6 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
