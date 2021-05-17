@@ -58,8 +58,8 @@
 .home span.swipe {
   opacity: 0.5;
   margin-top: 0.5em;
-  -webkit-animation: swipe 1s ease-in-out infinite alternate both;
-  animation: swipe 1s ease-in-out infinite alternate both;
+  -webkit-animation: swipe 3s ease-in-out infinite alternate both;
+  animation: swipe 3s ease-in-out infinite alternate both;
 }
 
 @-webkit-keyframes swipe {
