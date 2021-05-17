@@ -13,13 +13,7 @@ import { Aside } from '../Aside/Aside'
 import { Loading } from '../Loading/Loading'
 
 // Interfaces
-export interface iCharacter {
-  id: string
-  name: string
-  gender: string
-  height: string
-  birth_year: string
-}
+import { iCharacter } from '../../Interfaces/iCharacter'
 
 export const Home: React.FC = () => {
   const [character, setCharacter] = useState<iCharacter | null>(null)

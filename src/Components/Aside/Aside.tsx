@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import './Aside.css'
 
 // Interfaces
-import { iCharacter } from '../Home/Home'
+import { iCharacter } from '../../Interfaces/iCharacter'
 interface iProps {
   character: iCharacter | null
   setCharacter: Function
