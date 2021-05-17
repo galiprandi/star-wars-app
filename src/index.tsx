@@ -14,8 +14,12 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/character/:id" component={CharacterDetails} />
+        <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/character/:id`}
+          component={CharacterDetails}
+        />
         <Route component={Error404} />
       </Switch>
     </Router>
