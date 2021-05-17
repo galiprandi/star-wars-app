@@ -14,7 +14,7 @@ import { ErrorsMessages } from '../ErrorsMessages/ErrorsMessages'
 export const CharacterDetails: React.FC = () => {
   const history = useHistory()
   const { id } = useParams<{ id: string }>()
-  const { status, details } = useCharacterDetails(+id)
+  const { status, details } = useCharacterDetails(id)
 
   return (
     <main className="character-details">
@@ -47,8 +47,7 @@ export const CharacterDetails: React.FC = () => {
                 <li>Mass: {details?.mass} kg</li>
                 <li>Films: {details?.films.length}</li>
               </ul>
-
-              <button onClick={() => history.push('/')}>
+              <button onClick={() => history.push(`${process.env.PUBLIC_URL}`)}>
                 <span className="material-icons">navigate_before</span>
                 <span>Back</span>
               </button>

@@ -5,7 +5,7 @@ import axios from 'axios'
 import { iPeople } from '../Interfaces/iPeople'
 import { iStatus } from '../Interfaces/iStatus'
 
-export const useCharacterDetails = (id: number) => {
+export const useCharacterDetails = (id: string) => {
   const [status, setStatus] = useState<iStatus>('idle')
   const [details, setDetails] = useState<iPeople | null>(null)
 
