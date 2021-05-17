@@ -1,0 +1,29 @@
+import React from 'react'
+
+// Resources
+import imgInfo from './robot.png'
+import imgError from './dark.png'
+
+// Interfaces
+interface iProps {
+  type: 'info' | 'error'
+  message: string
+}
+
+export const ErrorsMessages: React.FC<iProps> = ({ type, message }) => {
+  const image = type === 'info' ? imgInfo : imgError
+
+  return (
+    <div
+      style={{
+        textAlign: 'center',
+        maxWidth: '70%',
+        margin: 'auto',
+        backgroundColor: 'white',
+      }}
+    >
+      <img src={image} alt={type} style={{ textAlign: 'center' }} />
+      <p>{message}</p>
+    </div>
+  )
+}

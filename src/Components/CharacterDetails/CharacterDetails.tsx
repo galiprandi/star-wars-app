@@ -9,6 +9,7 @@ import { useCharacterDetails } from '../../Hooks/useCharacterDetails'
 
 // Components
 import { Loading } from '../Loading/Loading'
+import { ErrorsMessages } from '../ErrorsMessages/ErrorsMessages'
 
 export const CharacterDetails: React.FC = () => {
   const history = useHistory()
@@ -21,9 +22,10 @@ export const CharacterDetails: React.FC = () => {
         {
           // Handle errors
           status === 'error' && (
-            <h4>
-              Sorry, some error has occurred and cannot show character details.
-            </h4>
+            <ErrorsMessages
+              type="error"
+              message="Sorry, some error has occurred and cannot show character details."
+            />
           )
         }
         {
