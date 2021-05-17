@@ -11,7 +11,9 @@ export const useCharacterDetails = (id: string) => {
 
   useEffect(() => {
     const getDetails = async () => {
-      const url = 'https://swapi.dev/api/people/' + id
+      const url = `https://swapi.dev/api/people/${id}/`
+      console.log(`Getting: ${url}`)
+
       setStatus('getting')
       try {
         const response = await axios.get(url)
