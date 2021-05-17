@@ -5,6 +5,7 @@
   width: 100%;
   left: 0;
   height: 100vh;
+  -webkit-transform: translateX(100%);
   transform: translateX(100%);
   transition: all 0.4s ease-in-out;
 
@@ -23,6 +24,7 @@
   --shadow: 2px 0 2px 10px rgba(34, 34, 34, 0.4);
 }
 aside.active {
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -55,12 +57,14 @@ aside.active {
 .aside .container .btn {
   cursor: pointer;
 }
-.aside .container .btn:hover {
+.aside .container section a:hover {
   color: aqua;
+  text-decoration: none;
 }
-.aside .container section > p {
+.aside .container section > a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 1em;
+  color: inherit;
 }
