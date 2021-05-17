@@ -8,6 +8,18 @@ Also you can install app like a others PWA
 
 The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
+### ToDo
+
+- [x] Add unity test
+
+- [ ] Add more functions
+
+- [ ] Improve styles
+
+- [ ] Check styles on large screens
+
+- [ ] Setup integration test
+
 ### How to run locally:
 
 ```bash
@@ -24,8 +36,8 @@ The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
 ## Available Scripts
 
-### `npm start`
+`npm start`
 
-### `npm test`
+`npm test`
 
-### `npm run build`
+`npm run build`
