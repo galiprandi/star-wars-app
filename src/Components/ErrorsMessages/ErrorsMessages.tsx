@@ -19,7 +19,10 @@ export const ErrorsMessages: React.FC<iProps> = ({ type, message }) => {
         textAlign: 'center',
         maxWidth: '70%',
         margin: 'auto',
-        backgroundColor: 'white',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
       }}
     >
       <img src={image} alt={type} style={{ textAlign: 'center' }} />
