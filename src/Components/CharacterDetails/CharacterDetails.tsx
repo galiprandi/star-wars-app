@@ -6,18 +6,30 @@ import './CharacterDetails.css'
 
 // Hooks
 import { useCharacterDetails } from '../../Hooks/useCharacterDetails'
+import { useSwipe } from '../../Hooks/useSwipe'
 
 // Components
 import { Loading } from '../Loading/Loading'
 import { ErrorsMessages } from '../ErrorsMessages/ErrorsMessages'
 
 export const CharacterDetails: React.FC = () => {
+  const { swipe } = useSwipe()
   const history = useHistory()
   const { id } = useParams<{ id: string }>()
   const { status, details } = useCharacterDetails(id)
 
+  const handleSwipe = (direction: string) => {
+    if (direction === 'left') goHome()
+  }
+
+  const goHome = () => history.push(`${process.env.PUBLIC_URL}`)
+
   return (
-    <main className="character-details">
+    <main
+      className="character-details"
+      onTouchStart={evt => swipe(evt, handleSwipe)}
+      onTouchEnd={evt => swipe(evt, handleSwipe)}
+    >
       <section className="container">
         {
           // Handle errors
@@ -47,7 +59,7 @@ export const CharacterDetails: React.FC = () => {
                 <li>Mass: {details?.mass} kg</li>
                 <li>Films: {details?.films.length}</li>
               </ul>
-              <button onClick={() => history.push(`${process.env.PUBLIC_URL}`)}>
+              <button onClick={() => goHome()}>
                 <span className="material-icons">navigate_before</span>
                 <span>Back</span>
               </button>
