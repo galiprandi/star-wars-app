@@ -1,10 +1,17 @@
-import { render, screen, seq } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 // Import component !
 import { Home } from './Home'
 
 // Render Component
-beforeEach(() => render(<Home />))
+beforeEach(() =>
+  render(
+    <Router>
+      <Home />
+    </Router>
+  )
+)
 
 describe('<Home />', () => {
   it('should render a logo image', async () => {
