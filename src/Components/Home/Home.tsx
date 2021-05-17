@@ -50,39 +50,40 @@ export const Home: React.FC = () => {
         {
           // Pagination
           status === 'successful' && (
-            <div className="pagination">
-              {
-                // Previous Button
-                data?.previous && (
-                  <button onClick={() => changePage('previous')}>
-                    <span className="material-icons">navigate_before</span>
-                  </button>
-                )
-              }
+            <>
+              <div className="pagination">
+                {
+                  // Previous Button
+                  data?.previous && (
+                    <button onClick={() => changePage('previous')}>
+                      <span className="material-icons">navigate_before</span>
+                    </button>
+                  )
+                }
 
-              {
-                // Page number
-                data?.previous && (
-                  <span className="page-number">{currentPage}</span>
-                )
-              }
+                {
+                  // Page number
+                  data?.previous && (
+                    <span className="page-number">{currentPage}</span>
+                  )
+                }
 
-              {
-                // Next Button
-                data?.next && (
-                  <button onClick={() => changePage('next')}>
-                    <span className="material-icons">navigate_next</span>
-                  </button>
-                )
-              }
+                {
+                  // Next Button
+                  data?.next && (
+                    <button onClick={() => changePage('next')}>
+                      <span className="material-icons">navigate_next</span>
+                    </button>
+                  )
+                }
+              </div>
               <span
-                style={{ flexBasis: '100%', opacity: 0.5 }}
                 className="material-icons swipe"
                 title="Swipe to change the page"
               >
                 swipe
               </span>
-            </div>
+            </>
           )
         }
       </div>

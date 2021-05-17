@@ -55,7 +55,9 @@
   left: 1em;
 }
 
-span.swipe {
+.home span.swipe {
+  opacity: 0.5;
+  margin-top: 0.5em;
   -webkit-animation: swipe 1s ease-in-out infinite alternate both;
   animation: swipe 1s ease-in-out infinite alternate both;
 }
