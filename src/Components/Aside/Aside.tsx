@@ -45,7 +45,7 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
             <br />
             <section>
               <Link
-                to={`./character/${characterID}`}
+                to={`${process.env.PUBLIC_URL}/character/${characterID}`}
                 title="Show me more about this character"
               >
                 all details

@@ -55,6 +55,7 @@ aside.active {
 .aside .container .btn {
   cursor: pointer;
 }
+.aside .container section p.btn:hover,
 .aside .container section a:hover {
   color: aqua;
   text-decoration: none;
