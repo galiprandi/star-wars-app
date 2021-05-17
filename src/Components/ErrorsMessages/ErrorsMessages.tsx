@@ -24,6 +24,9 @@ export const ErrorsMessages: React.FC<iProps> = ({ type, message }) => {
     >
       <img src={image} alt={type} style={{ textAlign: 'center' }} />
       <p>{message}</p>
+      <p>
+        <a href="/">Back to Home</a>
+      </p>
     </div>
   )
 }
