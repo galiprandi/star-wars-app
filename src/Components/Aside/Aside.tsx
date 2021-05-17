@@ -13,7 +13,6 @@ interface iProps {
 
 export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
   const characterID = character?.id || 1
-
   return (
     <aside className={`aside ${!!character && 'active'}`}>
       <div className="container-wrap">
