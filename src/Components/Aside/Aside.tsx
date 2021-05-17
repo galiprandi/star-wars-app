@@ -18,7 +18,7 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
     <aside className={`aside ${!!character && 'active'}`}>
       <div className="container-wrap">
         <div className="container">
-          <div className="details">
+          <section className="details">
             <h1 className="name">{character?.name}</h1>
             <br />
             <section>
@@ -38,13 +38,14 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
               </p>
 
               <p title="Birth">
-                {character?.birth_year}
+                <span>{character?.birth_year}</span>
                 <span className="material-icons">cake</span>
               </p>
             </section>
             <br />
             <section>
               <Link
+                className="link"
                 to={`${process.env.PUBLIC_URL}/character/${characterID}`}
                 title="Show me more about this character"
               >
@@ -52,9 +53,9 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
                 <span className="material-icons">format_list_bulleted</span>
               </Link>
             </section>
-          </div>
+          </section>
           <section className="footer">
-            <p onClick={() => setCharacter(null)} className="btn">
+            <p className="link" onClick={() => setCharacter(null)}>
               close
               <span className="material-icons">navigate_next</span>
             </p>
