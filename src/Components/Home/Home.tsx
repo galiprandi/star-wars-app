@@ -6,6 +6,7 @@ import logo from './logo.png'
 
 // Hooks
 import { usePeople } from '../../Hooks/usePeople'
+import { useSwipe } from '../../Hooks/useSwipe'
 
 // Components
 import { Character } from '../Character/Character'
@@ -16,27 +17,18 @@ import { Loading } from '../Loading/Loading'
 import { iCharacter } from '../../Interfaces/iCharacter'
 
 export const Home: React.FC = () => {
+  const { swipe } = useSwipe()
   const [character, setCharacter] = useState<iCharacter | null>(null)
   const { status, data, currentPage, changePage } = usePeople()
 
-  let startPosition = -1
-  const handleSwipe = (evt: React.TouchEvent) => {
-    const threshold = evt.changedTouches[0].screenX / 4
-    const currentPosition = evt.changedTouches[0].clientX
-    console.log(evt)
-    if (evt.type === 'touchstart') startPosition = currentPosition
-    if (evt.type === 'touchend' && currentPosition !== startPosition) {
-      const difference = currentPosition - startPosition
-      if (difference < threshold) changePage('next')
-      if (difference > threshold * -1) changePage('previous')
-    }
-  }
+  const handleSwipe = (direction: 'left' | 'right') =>
+    direction === 'left' ? changePage('next') : changePage('previous')
 
   return (
     <main
       className="home"
-      onTouchStart={evt => handleSwipe(evt)}
-      onTouchEnd={evt => handleSwipe(evt)}
+      onTouchStart={evt => swipe(evt, handleSwipe)}
+      onTouchEnd={evt => swipe(evt, handleSwipe)}
     >
       <img
         src={logo}
