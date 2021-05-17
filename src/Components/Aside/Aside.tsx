@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // Styles
 import './Aside.css'
@@ -12,10 +12,7 @@ interface iProps {
 }
 
 export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
-  const cid = character?.id
-  const history = useHistory()
-
-  const handleClickMoreDetails = () => history.push('/character/' + cid)
+  const characterID = character?.id || 1
 
   return (
     <aside className={`aside ${!!character && 'active'}`}>
@@ -47,14 +44,13 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
             </section>
             <br />
             <section>
-              <p
+              <Link
+                to={`./character/${characterID}`}
                 title="Show me more about this character"
-                onClick={() => handleClickMoreDetails()}
-                className="btn"
               >
                 all details
                 <span className="material-icons">format_list_bulleted</span>
-              </p>
+              </Link>
             </section>
           </div>
           <section className="footer">
