@@ -10,7 +10,7 @@ The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
 ### ToDo
 
-- [x] Add unity test
+- [x] Add unity test to component
 
 - [ ] Add more functions
 
