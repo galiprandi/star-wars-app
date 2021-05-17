@@ -51,12 +51,20 @@ export const CharacterDetails: React.FC = () => {
               <h1>{details?.name} </h1>
               <ul>
                 <li>Gender: {details?.gender}</li>
-                <li>Height: {details?.height && +details?.height / 100}m</li>
+                <li>
+                  Height:{' '}
+                  {details?.height && +details?.height > 0
+                    ? `${+details?.height / 100}m`
+                    : details?.height}
+                </li>
                 <li>Birth: {details?.birth_year}</li>
                 <li>Skin Color: {details?.skin_color}</li>
                 <li>Eye Colors: {details?.eye_color}</li>
                 <li>Hair Color: {details?.hair_color}</li>
-                <li>Mass: {details?.mass} kg</li>
+                <li>
+                  Mass:{' '}
+                  {+details?.mass > 0 ? details?.mass + 'kg' : details?.mass}
+                </li>
                 <li>Films: {details?.films.length}</li>
               </ul>
               <button onClick={() => goHome()}>

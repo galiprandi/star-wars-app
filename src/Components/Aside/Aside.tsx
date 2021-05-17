@@ -31,8 +31,10 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
                 </span>
               </p>
 
-              <p title="Height" style={{ textTransform: 'lowercase' }}>
-                {character?.height && +character?.height / 100}m
+              <p title="Height">
+                {character?.height && +character?.height > 0
+                  ? `${+character?.height / 100}m`
+                  : character?.height + ''}
                 <span className="material-icons">height</span>
               </p>
 
