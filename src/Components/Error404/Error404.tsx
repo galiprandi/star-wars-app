@@ -2,7 +2,7 @@ import React from 'react'
 
 // Interfaces
 interface iProps {
-  location: Location
+  location?: Location
 }
 
 export const Error404: React.FC<iProps> = ({ location }) => {
@@ -20,7 +20,7 @@ export const Error404: React.FC<iProps> = ({ location }) => {
     >
       <h2>No page found on</h2>
       <h5>
-        <code>{location.pathname}</code>
+        <code>{location?.pathname}</code>
       </h5>
     </div>
   )
