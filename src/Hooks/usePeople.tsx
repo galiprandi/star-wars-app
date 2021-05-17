@@ -29,12 +29,14 @@ export const usePeople = () => {
   const changePage = (page: 'previous' | 'next') => {
     if (page === 'previous' && !!data?.previous) {
       setCurrentPage(prev => prev - 1)
-      getData(data.previous)
+      const secureUrl = data.previous.replace('http', 'https')
+      getData(secureUrl)
     }
 
     if (page === 'next' && !!data?.next) {
       setCurrentPage(prev => prev + 1)
-      getData(data.next)
+      const secureUrl = data.next.replace('http', 'https')
+      getData(secureUrl)
     }
   }
 
