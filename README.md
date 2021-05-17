@@ -4,9 +4,9 @@
 
 ### Visit: [Star Wars App](https://galiprandi.github.io/star-wars-app/)
 
-Also you can install app like a others PWA
+You can install this app like a any others PWA.
 
-The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
+The data is provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
 ### ToDo
 
@@ -14,9 +14,11 @@ The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
 - [x] Add unity test to component
 
-- [ ] Add more functions
+- [x] Add support to touch gestures
 
-- [ ] Improve styles
+- [ ] Add more functionality
+
+- [x] Improve styles
 
 - [ ] Check styles on large screens
 
