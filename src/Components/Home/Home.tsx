@@ -19,8 +19,25 @@ export const Home: React.FC = () => {
   const [character, setCharacter] = useState<iCharacter | null>(null)
   const { status, data, currentPage, changePage } = usePeople()
 
+  let startPosition = -1
+  const handleSwipe = (evt: React.TouchEvent) => {
+    const threshold = evt.changedTouches[0].screenX / 4
+    const currentPosition = evt.changedTouches[0].clientX
+    console.log(evt)
+    if (evt.type === 'touchstart') startPosition = currentPosition
+    if (evt.type === 'touchend' && currentPosition !== startPosition) {
+      const difference = currentPosition - startPosition
+      if (difference < threshold) changePage('next')
+      if (difference > threshold * -1) changePage('previous')
+    }
+  }
+
   return (
-    <main className="home">
+    <main
+      className="home"
+      onTouchStart={evt => handleSwipe(evt)}
+      onTouchEnd={evt => handleSwipe(evt)}
+    >
       <img
         src={logo}
         className="logo"
@@ -66,6 +83,13 @@ export const Home: React.FC = () => {
                   </button>
                 )
               }
+              <span
+                style={{ flexBasis: '100%', opacity: 0.5 }}
+                className="material-icons"
+                title="Swipe to change the page"
+              >
+                swipe
+              </span>
             </div>
           )
         }

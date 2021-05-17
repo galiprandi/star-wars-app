@@ -16,14 +16,14 @@
   margin: 1em;
 }
 
-.home .container {
+.home > .container {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 1em;
   text-align: center;
   width: 90%;
 }
 
-.home .container > * + * {
+.home > .container > * + * {
   margin-top: 1em;
 }
 
@@ -37,6 +37,7 @@
 
 .home .container .pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1em;
