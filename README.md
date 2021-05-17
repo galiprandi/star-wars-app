@@ -10,6 +10,8 @@ The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
 ### ToDo
 
+- [x] Add CD/CI strategie based
+
 - [x] Add unity test to component
 
 - [ ] Add more functions
