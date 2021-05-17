@@ -1,16 +1,26 @@
 # star-wars-app
 
-Unofficial Star Wars App
+> Unofficial Star Wars little App for learning purposes.
 
-## Try online
+### Visit: [Star Wars App](https://galiprandi.github.io/star-wars-app/)
 
-[Star Wars App](https://galiprandi.github.io/star-wars-app/)
+Also you can install app like a others PWA
 
-## How to run:
+The data are provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
-1 - clone repo
-2 - npm i
-3 - npm run start
+### How to run locally:
+
+```bash
+
+- git clone git@github.com:galiprandi/star-wars-app.git
+
+- cd star-wars-app
+
+- npm i
+
+- npm run start
+
+```
 
 ## Available Scripts
 
