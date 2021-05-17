@@ -54,3 +54,28 @@
   bottom: 1em;
   left: 1em;
 }
+
+span.swipe {
+  -webkit-animation: swipe 1s ease-in-out infinite alternate both;
+  animation: swipe 1s ease-in-out infinite alternate both;
+}
+
+@-webkit-keyframes swipe {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes swipe {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}

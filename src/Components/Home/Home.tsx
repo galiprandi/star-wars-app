@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
               }
               <span
                 style={{ flexBasis: '100%', opacity: 0.5 }}
-                className="material-icons"
+                className="material-icons swipe"
                 title="Swipe to change the page"
               >
                 swipe
