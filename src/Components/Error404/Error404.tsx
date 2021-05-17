@@ -1,5 +1,8 @@
 import React from 'react'
 
+// Components
+import { ErrorsMessages } from '../ErrorsMessages/ErrorsMessages'
+
 // Interfaces
 interface iProps {
   location?: Location
@@ -18,10 +21,8 @@ export const Error404: React.FC<iProps> = ({ location }) => {
         backgroundColor: 'rgba(255,255,255,0.8)',
       }}
     >
-      <h2>No page found on</h2>
-      <h5>
-        <code>{location?.pathname}</code>
-      </h5>
+      <ErrorsMessages type="error" message="PAGE NO FOUND" />
+      <code>{location?.pathname}</code>
     </div>
   )
 }

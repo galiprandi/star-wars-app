@@ -8,6 +8,6 @@ beforeEach(() => render(<Component />))
 
 describe('<Error404 />', () => {
   it('should render a 404 page', () => {
-    screen.getByRole('heading', { name: /found/i })
+    screen.getByText(/page no found/i)
   })
 })
