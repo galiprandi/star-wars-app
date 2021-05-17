@@ -19,7 +19,7 @@ export const CharacterDetails: React.FC = () => {
   const { status, details } = useCharacterDetails(id)
 
   const handleSwipe = (direction: string) => {
-    if (direction === 'left') goHome()
+    if (direction === 'right') goHome()
   }
 
   const goHome = () => history.push(`${process.env.PUBLIC_URL}`)
