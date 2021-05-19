@@ -2,7 +2,7 @@
 
 > Unofficial Star Wars little App for learning purposes.
 
-### Visit: [Star Wars App](https://galiprandi.github.io/star-wars-app/)
+#### Visit: [Star Wars App](https://galiprandi.github.io/star-wars-app/)
 
 ![Sreenshots](https://galiprandi.github.io/star-wars-app/screen-collage.jpg) 
 
@@ -40,7 +40,7 @@ The data is provided by [SWAPI - The Star Wars API](https://swapi.dev/)
 
 ```
 
-## Available Scripts
+### Available Scripts
 
 `npm start`
 
