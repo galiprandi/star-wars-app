@@ -4,6 +4,8 @@
 
 ### Visit: [Star Wars App](https://galiprandi.github.io/star-wars-app/)
 
+[Sreenshots](https://galiprandi.github.io/star-wars-app/screen-collage.jpg) 
+
 You can install this app like a any others PWA.
 
 The data is provided by [SWAPI - The Star Wars API](https://swapi.dev/)
