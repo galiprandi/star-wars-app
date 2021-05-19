@@ -4,7 +4,7 @@
 
 ### Visit: [Star Wars App](https://galiprandi.github.io/star-wars-app/)
 
-[Sreenshots](https://galiprandi.github.io/star-wars-app/screen-collage.jpg) 
+![Sreenshots](https://galiprandi.github.io/star-wars-app/screen-collage.jpg) 
 
 You can install this app like a any others PWA.
 
