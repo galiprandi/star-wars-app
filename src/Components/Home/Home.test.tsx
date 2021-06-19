@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 // Import component !
@@ -8,7 +9,9 @@ import { Home } from './Home'
 beforeEach(() =>
   render(
     <Router>
-      <Home />
+      <QueryClientProvider client={new QueryClient()}>
+        <Home />
+      </QueryClientProvider>
     </Router>
   )
 )

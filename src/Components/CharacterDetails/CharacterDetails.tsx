@@ -11,12 +11,13 @@ import { useSwipe } from '../../Hooks/useSwipe'
 // Components
 import { Loading } from '../Loading/Loading'
 import { ErrorsMessages } from '../ErrorsMessages/ErrorsMessages'
+import { Films } from '../Films/Films'
 
 export const CharacterDetails: React.FC = () => {
   const { swipe } = useSwipe()
   const history = useHistory()
   const { id } = useParams<{ id: string }>()
-  const { status, details } = useCharacterDetails(id)
+  const { data, isSuccess, isFetching, isError } = useCharacterDetails(id)
 
   const handleSwipe = (direction: string) => {
     if (direction === 'right') goHome()
@@ -32,8 +33,8 @@ export const CharacterDetails: React.FC = () => {
     >
       <section className="container">
         {
-          // Handle errors
-          status === 'error' && (
+          // On errors
+          isError && (
             <ErrorsMessages
               type="error"
               message="Sorry, some error has occurred and cannot show character details."
@@ -41,32 +42,43 @@ export const CharacterDetails: React.FC = () => {
           )
         }
         {
-          // Loading
-          status === 'getting' && <Loading />
+          // On loading
+          isFetching && <Loading />
         }
         {
-          // Render details
-          status === 'successful' && details?.name && (
+          // On Success
+          isSuccess && (
             <>
-              <h1>{details?.name} </h1>
+              <h1>{data?.name} </h1>
               <ul>
-                <li>Gender: {details?.gender}</li>
+                <li>Gender: {data?.gender}</li>
                 <li>
                   Height:{' '}
-                  {details?.height && +details?.height > 0
-                    ? `${+details?.height / 100}m`
-                    : details?.height}
+                  {data?.height && +data?.height > 0
+                    ? `${+data?.height / 100}m`
+                    : data?.height}
                 </li>
-                <li>Birth: {details?.birth_year}</li>
-                <li>Skin Color: {details?.skin_color}</li>
-                <li>Eye Colors: {details?.eye_color}</li>
-                <li>Hair Color: {details?.hair_color}</li>
+                <li>Birth: {data?.birth_year}</li>
+                <li>Skin Color: {data?.skin_color}</li>
+                <li>Eye Colors: {data?.eye_color}</li>
+                <li>Hair Color: {data?.hair_color}</li>
+                {data?.mass && (
+                  <li>
+                    {`Mass: ${
+                      +data?.mass > 0 ? data?.mass + 'kg' : data?.mass
+                    }`}
+                  </li>
+                )}
                 <li>
-                  Mass:{' '}
-                  {+details?.mass > 0 ? details?.mass + 'kg' : details?.mass}
+                  Films:
+                  <ul>
+                    {data?.films.map(url => (
+                      <Films url={url} key={url} />
+                    ))}
+                  </ul>
                 </li>
-                <li>Films: {details?.films.length}</li>
               </ul>
+
               <button onClick={() => goHome()}>
                 <span className="material-icons">navigate_before</span>
                 <span>Back</span>
