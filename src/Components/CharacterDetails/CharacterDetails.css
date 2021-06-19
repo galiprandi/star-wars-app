@@ -20,7 +20,7 @@
 .character-details .container ul {
   padding: 0;
   list-style: inside;
-  line-height: 2;
+  line-height: 1.7;
   text-transform: capitalize;
 }
 
@@ -28,4 +28,10 @@
   position: absolute;
   bottom: 5em;
   font-size: 14px;
+}
+
+.character-details .container ul li ul {
+  padding-left: 18px;
+  list-style-type: circle;
+  font-size: 16px;
 }

@@ -5,7 +5,7 @@ import './Home.css'
 import logo from './logo.png'
 
 // Hooks
-import { usePeople } from '../../Hooks/usePeople'
+import { useCharacters } from '../../Hooks/useCharacters'
 import { useSwipe } from '../../Hooks/useSwipe'
 
 // Components
@@ -19,11 +19,13 @@ import { iCharacter } from '../../Interfaces/iCharacter'
 export const Home: React.FC = () => {
   const { swipe } = useSwipe()
   const [character, setCharacter] = useState<iCharacter | null>(null)
-  const { status, data, currentPage, changePage } = usePeople()
+  // const { status, data, currentPage, changePage } = usePeople()
+  const { data, isLoading, isSuccess, isError, page, setPage } = useCharacters()
 
-  const handleSwipe = (direction: 'left' | 'right') =>
-    direction === 'left' ? changePage('next') : changePage('previous')
-
+  const handleSwipe = (direction: 'left' | 'right') => {
+    if (direction === 'left' && data?.next) setPage(data.next)
+    if (direction === 'right' && data?.previous) setPage(data.previous)
+  }
   return (
     <main
       className="home"
@@ -37,41 +39,44 @@ export const Home: React.FC = () => {
         title="Star Wars App"
       />
       <div className="container">
-        {status === 'getting' ? <Loading /> : undefined}
-
         {
-          // Characters
-          status === 'successful' &&
-            data?.results &&
-            data.results.map(item => (
+          // On success
+          isSuccess &&
+            data?.results?.map(item => (
               <Character setCharacter={setCharacter} {...item} key={item.url} />
             ))
         }
         {
-          // Pagination
-          status === 'successful' && (
+          // On success => Pagination
+          isSuccess && (
             <>
               <div className="pagination">
                 {
+                  // On fetching
+                  isLoading && <Loading />
+                }
+                {
+                  // On Error
+                  isError && <h4>Something's wrong :/</h4>
+                }
+                {
                   // Previous Button
                   data?.previous && (
-                    <button onClick={() => changePage('previous')}>
+                    <button onClick={() => setPage(data.previous!)}>
                       <span className="material-icons">navigate_before</span>
                     </button>
                   )
                 }
-
                 {
                   // Page number
                   data?.previous && (
-                    <span className="page-number">{currentPage}</span>
+                    <span className="page-number">{page.slice(-1)}</span>
                   )
                 }
-
                 {
                   // Next Button
                   data?.next && (
-                    <button onClick={() => changePage('next')}>
+                    <button onClick={() => setPage(data.next!)}>
                       <span className="material-icons">navigate_next</span>
                     </button>
                   )

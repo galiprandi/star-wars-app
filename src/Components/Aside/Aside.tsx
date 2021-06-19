@@ -15,7 +15,13 @@ export const Aside: React.FC<iProps> = ({ character, setCharacter }) => {
   const characterID = character?.id || 1
   return (
     <aside className={`aside ${!!character && 'active'}`}>
-      <div className="container-wrap">
+      <div
+        className="container-wrap"
+        onClick={e => {
+          e.stopPropagation()
+          setCharacter(null)
+        }}
+      >
         <div className="container">
           <section className="details">
             <h1 className="name">{character?.name}</h1>
