@@ -57,7 +57,6 @@ export const Home = () => {
           <Pagination
             page={page}
             setPage={setPage}
-            isSuccess={isSuccess}
             next={data?.next}
             previous={data?.previous}
           />
